@@ -54,34 +54,27 @@ class SignupForm(UserCreationForm):
 
 class NewItemForm(forms.ModelForm):
     class Meta:
-        model=Item
-        fields=['Category', 'name', 'description', 'price']
+        model = Item
+        fields = ('category', 'name', 'description', 'price', 'image',)
 
-        widgets={
-            'category': forms.Select (
-                attrs={
-                    'class': 'form-select'
-                }
-            ),
-            'name': forms.TextInput(
-                attrs={
-                    'class': 'form-select'
-                }
-            ),
-            'description': forms.Textarea(
-                attrs={
-                    'class': 'form_select',
-                    'style': 'height: 100px'
-                }
-            ),
-            'price': forms.TextInput(
-                attrs={
-                    'class': 'form-select'
-                }
-            ),
-            'image': forms.FileInput(
-                attrs={
-                    'class': 'form-select'
-                }
-            ),
+        widgets = {
+            'category': forms.Select(attrs={
+                'class': 'form-select'
+            }),
+            'name': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'description': forms.Textarea(attrs={
+                'class': 'form-control',
+                'style': 'height: 100px'
+            }),
+            'price': forms.TextInput(attrs={
+                'class': 'form-control',
+            }),
+            'price': forms.TextInput(attrs={
+                'class': 'form-control',
+            }),
+            'image': forms.FileInput(attrs={
+                'class': 'form-control',
+            }),
         }
